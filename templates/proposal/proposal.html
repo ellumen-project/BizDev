@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Response</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .question h2 {
+            color: #333;
+        }
+        .question p {
+            color: #666;
+        }
+        .source {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .source h2 {
+            color: #333;
+        }
+        .source p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    {% for question, result in results.items %}
+        <div class="question" id="{{ question }}">
+            <h2>{{ question }}</h2>
+            {% for line in result.reply.splitlines %}
+                <p>{{ line }}</p>
+            {% endfor %}
+        </div>
+        <div class="source" id="source">
+        <h2>Source:</h2>
+        <p>{{ result.Source }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Response</title>
+</head>
+<body>
+    <h2>{{query}}</h2>
+    <p>Score: {{results.score}}</p>
+    <p>Data: {{results.data}}</p>
+    {% if results.document %}
+        <p>Document ID: {{results.document.id}}</p>
+        <p>Document Content: {{results.document.content}}</p>
+        <p>Document Meta: {{results.document.meta}}</p>
+    {% endif %}
+</body>
+</html>

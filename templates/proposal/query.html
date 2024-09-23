@@ -1,0 +1,6 @@
+<!-- <h2>LLM Query</h2>
+{{query_var}} -->
+<h2>LLM Query</h2>
+{% for key, value in query_var.items %}
+    <strong>{{ key }}:</strong> {{ value }}<br>
+{% endfor %}
